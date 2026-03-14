@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Love Story</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 100vh;
+            background: url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes';
+            font-size: 70px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #ff6f91;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: #ff3f6c;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Great Vibes';
+            font-size: 50px;
+            margin-bottom: 40px;
+            color: #d6336c;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            width: 250px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card p {
+            padding: 15px;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* LOVE LETTER */
+
+        .letter {
+            max-width: 700px;
+            margin: auto;
+            font-size: 22px;
+            font-family: 'Great Vibes';
+            color: #c2185b;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* COUNTDOWN */
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .time-box h3 {
+            font-size: 35px;
+            color: #ff4081;
+        }
+
+        /* SURPRISE */
+
+        .surprise button {
+            padding: 15px 40px;
+            font-size: 18px;
+            background: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 30px;
+            font-size: 40px;
+            font-family: 'Great Vibes';
+            color: #e91e63;
+            display: none;
+        }
+
+        /* GUEST FORM */
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background: #ff6f91;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* QUOTES */
+
+        .quote {
+            font-size: 25px;
+            font-family: 'Great Vibes';
+            color: #c2185b;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #ff6f91;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Our Love Story</h1>
+            <p>From the first hello to forever together</p>
+            <button onclick="scrollToSection()">Start the Journey ❤️</button>
+        </div>
+    </div>
+
+    <!-- STORY -->
+
+    <section id="story">
+
+        <h2>Our Story</h2>
+
+        <div class="timeline">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1529336953121-ad5a0d43d0d2">
+                <p>💖 The day we first met.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+                <p>💑 Our first beautiful date.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
+                <p>🌍 Adventures and memories together.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
+                <p>💍 The moment everything changed.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+
+    <section>
+
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91">
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2">
+            <img src="https://images.unsplash.com/photo-1499390160541-7aa3f3b3a8bb">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+        </div>
+
+    </section>
+
+    <!-- LOVE LETTER -->
+
+    <section>
+
+        <h2>Love Letter</h2>
+
+        <div class="letter">
+
+            Every moment with you feels like a dream I never want to wake up from.
+            You are my today, my tomorrow, and my forever. ❤️
+
+        </div>
+
+    </section>
+
+    <!-- COUNTDOWN -->
+
+    <section>
+
+        <h2>Wedding Countdown</h2>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <h3 id="days">0</h3>
+                <p>Days</p>
+            </div>
+
+            <div class="time-box">
+                <h3 id="hours">0</h3>
+                <p>Hours</p>
+            </div>
+
+            <div class="time-box">
+                <h3 id="minutes">0</h3>
+                <p>Minutes</p>
+            </div>
+
+            <div class="time-box">
+                <h3 id="seconds">0</h3>
+                <p>Seconds</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SURPRISE -->
+
+    <section class="surprise">
+
+        <h2>Special Surprise</h2>
+
+        <button onclick="showMessage()">Click for a Surprise 💌</button>
+
+        <div class="message" id="proposal">
+            💍 Will You Marry Me?
+        </div>
+
+    </section>
+
+    <!-- GUEST WISHES -->
+
+    <section>
+
+        <h2>Guest Wishes</h2>
+
+        <form onsubmit="addWish(event)">
+
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <textarea id="wish" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Wish</button>
+
+        </form>
+
+        <div id="wishList"></div>
+
+    </section>
+
+    <!-- QUOTES -->
+
+    <section>
+
+        <h2>Romantic Quotes</h2>
+
+        <div class="quote" id="quote">
+
+            "You are my sunshine in every storm."
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>✨ Two hearts, one love, one lifetime ✨</p>
+
+    </footer>
+
+    <script>
+
+        /* SCROLL */
+
+        function scrollToSection() {
+            document.getElementById("story").scrollIntoView({ behavior: "smooth" });
+        }
+
+        /* COUNTDOWN */
+
+        let weddingDate = new Date("Dec 31, 2026 00:00:00").getTime();
+
+        setInterval(function () {
+
+            let now = new Date().getTime();
+
+            let gap = weddingDate - now;
+
+            let days = Math.floor(gap / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+        }, 1000);
+
+        /* SURPRISE */
+
+        function showMessage() {
+            document.getElementById("proposal").style.display = "block";
+        }
+
+        /* GUEST WISHES */
+
+        function addWish(e) {
+
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let wish = document.getElementById("wish").value;
+
+            let div = document.createElement("div");
+
+            div.innerHTML = "<b>" + name + "</b>: " + wish;
+
+            document.getElementById("wishList").appendChild(div);
+
+            e.target.reset();
+
+        }
+
+        /* QUOTES SLIDER */
+
+        let quotes = [
+            "You are my sunshine in every storm.",
+            "With you, every moment is magical.",
+            "Forever begins with you.",
+            "My heart chose you."
+        ];
+
+        let i = 0;
+
+        setInterval(() => {
+            i = (i + 1) % quotes.length;
+            document.getElementById("quote").innerText = quotes[i];
+        }, 3000);
+
+    </script>
+
+</body>
+
+</html>
